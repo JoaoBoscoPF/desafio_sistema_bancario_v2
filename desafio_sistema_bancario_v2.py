@@ -9,7 +9,6 @@ def menu():
     [4]\t Nova conta
     [5]\t Novo usuário
     [6]\t Excluir conta inicial
-    [7]\t Listar contas
     [0]\t Sair
 
     => """
@@ -108,7 +107,7 @@ def excluir_conta_inicial(agencia, numero_conta, usuarios):
     if not usuario_existente:
         usuarios.remove(x)
         print("Sua conta foi excluída")
-        
+
 """        
         
 
@@ -151,7 +150,6 @@ def main():
         elif opcao == "5":
             criar_usuario(usuarios)  
         
-
         elif opcao == "0":
             break
       
