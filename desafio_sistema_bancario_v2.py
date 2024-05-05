@@ -8,6 +8,8 @@ def menu():
     [3]\t Extrato
     [4]\t Nova conta
     [5]\t Novo usuário
+    [6]\t Excluir conta inicial
+    [7]\t Listar contas
     [0]\t Sair
 
     => """
@@ -54,6 +56,7 @@ def saque(*, saldo, valor, extrato, limite, numero_saques, LIMITE_SAQUES):
 
 def mostrar_extrato(saldo, / ,  * , extrato):
 
+    print("\n **********************************************")
     print("\n ******* Olá, veja o seu extrato diário *******")
     print("\n Não ocorreram movimentações hoje." if not extrato else extrato)
     print(f"\n Saldo:\t R$ {saldo:.2f}")
@@ -92,6 +95,23 @@ def criar_conta(agencia, numero_conta, usuarios):
     else:
         print("\n Usuário não encontrado!")
 
+""" Não consegui implementar ainda, a conta não sai do "usuarios"
+
+def excluir_conta_inicial(agencia, numero_conta, usuarios):
+    cpf = input("Informe seu CPF:")
+    nome = input("Informe o seu nome: ")
+    data_nascimento = input("Informe sua data de nascimento: ")
+    endereco = input ("Informe o endereço(logradouro, nro - bairro - cidade/estado): ")
+    usuario_existente = filtrar_usuario(cpf, usuarios)
+    x = usuarios[0]
+
+    if not usuario_existente:
+        usuarios.remove(x)
+        print("Sua conta foi excluída")
+        
+"""        
+        
+
 
 def main():
 
@@ -129,8 +149,9 @@ def main():
 
                         
         elif opcao == "5":
-            criar_usuario(usuarios)
+            criar_usuario(usuarios)  
         
+
         elif opcao == "0":
             break
       
@@ -138,4 +159,6 @@ def main():
             print("Operação inválida!") 
 
 main()          
+
+
 
