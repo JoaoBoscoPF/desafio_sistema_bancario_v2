@@ -85,7 +85,7 @@ def criar_conta(agencia, numero_conta, usuarios):
     cpf = input("Informe seu CPF:")
     usuario_existente = filtrar_usuario(cpf, usuarios)
 
-    if usuario_existente:
+    if not usuario_existente:
         print("\n Conta criada!")
         return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario_existente}
 
